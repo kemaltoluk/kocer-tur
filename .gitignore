@@ -1,0 +1,16 @@
+node_modules/
+_site/
+.cache/
+.netlify/
+.env
+.env.*
+*.log
+npm-debug.log*
+
+# Windows / macOS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Ham içerik arşivi (WhatsApp orijinalleri) — repoya girmesin
+icerik-arsiv/

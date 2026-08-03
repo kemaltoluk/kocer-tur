@@ -1,0 +1,60 @@
+{
+  "ad": "Koçer Tur",
+  "unvan": "DOLDURULACAK — resmi firma ünvanı (ör. Koçer Turizm Taşımacılık Ltd. Şti.)",
+  "slogan": "Güvenli Yolculuğun Doğru Adresi.",
+  "ozet": "Adana ve çevresinde fabrika personel servisi, okul servisi, düğün-nişan-sünnet ve grup transfer hizmetleri.",
+
+  "url": "https://www.kocertur.com",
+
+  "telefon": "0554 159 56 01",
+  "yetkili": "Agit Toluk",
+  "eposta": "DOLDURULACAK — ör. info@kocertur.com",
+
+  "adres": {
+    "sokak": "DOLDURULACAK — açık adres (cadde/sokak, no)",
+    "ilce": "Ceyhan",
+    "il": "Adana",
+    "postaKodu": "DOLDURULACAK",
+    "ulke": "TR",
+    "haritaLinki": "DOLDURULACAK — Google Maps işletme bağlantısı"
+  },
+
+  "kurulusYili": "DOLDURULACAK — ör. 2015",
+  "aracSayisi": 10,
+  "aracSayisiNot": "Gönderilen fotoğraflarda 10 farklı plaka sayıldı. Gerçek sayı farklıysa güncelle.",
+
+  "calismaSaatleri": "Personel servisi vardiya düzeninde 7/24; ofis 08:00-18:00",
+
+  "sosyal": {
+    "instagram": "",
+    "facebook": "",
+    "youtube": ""
+  },
+
+  "hizmetBolgeleri": [
+    "Adana",
+    "Ceyhan",
+    "Yumurtalık",
+    "Osmaniye",
+    "Organize Sanayi Bölgeleri"
+  ],
+
+  "guvenceler": [
+    {
+      "baslik": "Zorunlu Koltuk Sigortası",
+      "aciklama": "Filodaki tüm araçlarda geçerli."
+    },
+    {
+      "baslik": "SRC ve Psikoteknik Belgeli Şoförler",
+      "aciklama": "Kadromuzun tamamı mevzuatın gerektirdiği belgelere sahiptir."
+    },
+    {
+      "baslik": "Düzenli Periyodik Bakım",
+      "aciklama": "Araçlar yetkili serviste bakımlı, muayeneleri güncel."
+    },
+    {
+      "baslik": "Zamanında Hizmet",
+      "aciklama": "Vardiya saatlerine göre planlanan, aksamayan servis düzeni."
+    }
+  ]
+}
