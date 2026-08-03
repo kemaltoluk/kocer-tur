@@ -1,0 +1,7 @@
+{
+  "layout": "layouts/yazi.njk",
+  "yazi": true,
+  "eleventyComputed": {
+    "permalink": "/blog/{{ page.fileSlug }}/"
+  }
+}

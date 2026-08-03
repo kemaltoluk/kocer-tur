@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+permalink: /hizmetler/
+baslik: Hizmetlerimiz
+seoBaslik: "Hizmetlerimiz | Personel, Okul ve Grup Taşımacılığı — Koçer Tur"
+aciklama: "Koçer Tur hizmetleri: fabrika personel servisi, okul servisi, düğün-nişan-sünnet taşımacılığı, grup gezi transferi ve havalimanı transferi."
+---
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">Hizmetlerimiz</span>
+      <h2 style="font-size:var(--fs-3xl);">Yolcu taşımacılığında ihtiyacınız neyse, karşılığı var.</h2>
+      <p>
+        Sözleşmeli kurumsal servisten tek seferlik özel programlara kadar
+        {{ site.adres.il }} ve çevresinde hizmet veriyoruz.
+      </p>
+    </div>
+
+    <div class="izgara izgara--3">
+      {%- for h in collections.hizmetler %}
+      <a class="hizmet{% if h.data.oneCikan %} hizmet--one-cikan{% endif %}" href="{{ h.url }}">
+        <div class="hizmet__gorsel">
+          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+        </div>
+        <div class="hizmet__ic">
+          {%- if h.data.oneCikan %}<span class="etiket">En çok tercih edilen</span>{% endif %}
+          <h3>{{ h.data.baslik }}</h3>
+          <p>{{ h.data.ozet }}</p>
+          <span class="hizmet__ok">
+            Detaylı bilgi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="kap cta__ic">
+    <div class="cta__metin">
+      <h2>Aradığınız hizmeti bulamadınız mı?</h2>
+      <p>Yolcu taşımacılığıyla ilgili farklı bir ihtiyacınız varsa arayın, konuşalım.</p>
+    </div>
+    <div class="btn-grup">
+      <a class="btn btn--buyuk" href="tel:{{ site.telefon | telLink }}">{{ site.telefon }}</a>
+    </div>
+  </div>
+</section>

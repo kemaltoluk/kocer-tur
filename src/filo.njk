@@ -1,0 +1,97 @@
+---
+layout: layouts/base.njk
+permalink: /filo/
+baslik: Filomuz
+seoBaslik: "Filomuz | Bakımlı Servis Araçları — Koçer Tur"
+aciklama: "Koçer Tur araç filosu: Mercedes-Benz Sprinter, Volkswagen Crafter ve Ford Transit minibüsler. Klimalı, bakımlı ve sigortalı araçlar."
+---
+
+<section class="hero" style="min-height:min(58svh, 520px);">
+  <div class="hero__gorsel">
+    {% resim "src/assets/img/filo/kocer-tur-filo-uc-arac.jpg", "Koçer Tur filosundaki üç minibüs yan yana park halinde", "100vw", "", true %}
+  </div>
+  <div class="kap hero__ic">
+    <h1 style="font-size:var(--fs-3xl);">{{ site.aracSayisi }} araçlık bakımlı filo.</h1>
+    <p class="hero__ozet">
+      Mercedes-Benz Sprinter, Volkswagen Crafter ve Ford Transit minibüsler.
+      Hepsi klimalı, giydirmeli ve düzenli bakımlı.
+    </p>
+  </div>
+</section>
+
+<section class="bolum bolum--koyu">
+  <div class="kap">
+    <div class="izgara izgara--3">
+      {%- for a in filo.araclar %}
+      <article class="arac">
+        <div class="arac__gorsel">
+          {% resim a.gorsel, a.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+        </div>
+        <div class="arac__ic">
+          <h3>{{ a.ad }}</h3>
+          <dl class="arac__spec">
+            <div><dt>Kapasite</dt><dd>{{ a.kapasite }}</dd></div>
+            <div><dt>Filodaki adet</dt><dd>{{ a.adet }}</dd></div>
+            <div><dt>Tip</dt><dd>{{ a.tip }}</dd></div>
+            <div><dt>Donanım</dt><dd>{{ a.donanim }}</dd></div>
+          </dl>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">Bakım ve güvenlik</span>
+      <h2>Araç yönetimini şansa bırakmıyoruz.</h2>
+    </div>
+
+    <div class="izgara izgara--2">
+      <div class="icerik">
+        <h3>Periyodik bakım</h3>
+        <p>
+          Araçlarımız yetkili serviste, üreticinin belirlediği kilometre
+          aralıklarında bakıma girer. Fren, lastik ve süspansiyon kontrolleri
+          bakım dışında da düzenli olarak yapılır.
+        </p>
+
+        <h3>Sigorta</h3>
+        <p>
+          Filodaki tüm araçlarda zorunlu koltuk ferdi kaza sigortası
+          bulunur. Trafik sigortaları ve muayeneleri güncel tutulur.
+        </p>
+      </div>
+
+      <div class="icerik">
+        <h3>Şoför kadrosu</h3>
+        <p>
+          Şoförlerimiz SRC ve psikoteknik belgelerine sahiptir. Ehliyet
+          sınıfları taşıdıkları araca uygundur ve belgelerin geçerlilik
+          süreleri takip edilir.
+        </p>
+
+        <h3>Temizlik</h3>
+        <p>
+          Servis araçlarının iç temizliği günlük, detaylı temizliği ise
+          haftalık olarak yapılır. Özel programlarda araç, program öncesi
+          ayrıca hazırlanır.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="kap cta__ic">
+    <div class="cta__metin">
+      <h2>Aracı yerinde görmek ister misiniz?</h2>
+      <p>Sözleşme öncesi araçlarımızı gelip inceleyebilirsiniz.</p>
+    </div>
+    <div class="btn-grup">
+      <a class="btn btn--buyuk" href="/iletisim/#teklif">Randevu Alın</a>
+    </div>
+  </div>
+</section>

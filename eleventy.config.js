@@ -54,7 +54,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img/marka": "assets/img/marka" });
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
-  eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
 
   eleventyConfig.addWatchTarget("src/assets/css/");
 
@@ -79,6 +78,8 @@ export default function (eleventyConfig) {
     const rakam = String(value).replace(/\D/g, "");
     return rakam.startsWith("0") ? `+9${rakam}` : `+${rakam}`;
   });
+
+  eleventyConfig.addFilter("limit", (dizi, n) => (dizi || []).slice(0, n));
 
   eleventyConfig.addFilter("waLink", (value) => {
     const rakam = String(value).replace(/\D/g, "");

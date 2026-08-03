@@ -1,0 +1,251 @@
+---
+layout: layouts/base.njk
+baslik: Adana Personel Servisi ve Grup Taşımacılığı
+seoBaslik: "Koçer Tur | Adana Personel Servisi, Okul Servisi ve Grup Taşımacılığı"
+aciklama: "Adana ve Ceyhan'da fabrika personel servisi, okul servisi, düğün-nişan-sünnet ve grup transfer hizmetleri. Bakımlı filo, SRC belgeli şoför kadrosu, sigortalı yolculuk."
+---
+
+<section class="hero">
+  <div class="hero__gorsel">
+    {% resim "src/assets/img/filo/kocer-tur-filo-gun-batimi.jpg", "Koçer Tur filosundaki minibüsler gün batımında fabrika önünde sıralanmış halde", "100vw", "", true %}
+  </div>
+
+  <div class="kap hero__ic">
+    <span class="hero__slogan">{{ site.slogan }}</span>
+
+    <h1>Fabrikanızın personelini <em>zamanında</em> ve güvenle taşıyoruz.</h1>
+
+    <p class="hero__ozet">
+      {{ site.adres.il }} ve çevresinde vardiya düzenine göre planlanan personel servisi,
+      okul servisi ve özel grup taşımacılığı. Bakımlı araçlar, belgeli şoförler, aksamayan servis.
+    </p>
+
+    <div class="btn-grup" style="margin-bottom:2.5rem;">
+      <a class="btn btn--buyuk" href="/iletisim/#teklif">Servis Teklifi Alın</a>
+      <a class="btn btn--buyuk btn--hayalet" href="tel:{{ site.telefon | telLink }}">{{ site.telefon }}</a>
+    </div>
+
+    <dl class="spec">
+      <div class="spec__hucre">
+        <dt class="spec__ad">Filo</dt>
+        <dd class="spec__deger">{{ site.aracSayisi }} Araç</dd>
+      </div>
+      <div class="spec__hucre">
+        <dt class="spec__ad">Araç Kapasitesi</dt>
+        <dd class="spec__deger">14–19 Kişi</dd>
+      </div>
+      <div class="spec__hucre">
+        <dt class="spec__ad">Hizmet Bölgesi</dt>
+        <dd class="spec__deger">{{ site.adres.il }} +</dd>
+      </div>
+      <div class="spec__hucre">
+        <dt class="spec__ad">Servis Düzeni</dt>
+        <dd class="spec__deger">7/24 Vardiya</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="guven">
+  <div class="kap">
+    <ul class="guven__liste">
+      {%- for g in site.guvenceler %}
+      <li class="guven__oge">
+        <span class="guven__ikon">
+          {%- if loop.index0 == 0 %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          {%- elif loop.index0 == 1 %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          {%- elif loop.index0 == 2 %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+          {%- else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          {%- endif %}
+        </span>
+        <div>
+          <strong>{{ g.baslik }}</strong>
+          <span>{{ g.aciklama }}</span>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">Hizmetlerimiz</span>
+      <h2>Tek araçlık transferden yüz kişilik vardiya servisine.</h2>
+      <p>
+        Kurumsal servis sözleşmelerinden tek seferlik özel programlara kadar
+        geniş bir yelpazede hizmet veriyoruz.
+      </p>
+    </div>
+
+    <div class="izgara izgara--3">
+      {%- for h in collections.hizmetler %}
+        {%- if h.data.oneCikan %}
+      <a class="hizmet hizmet--one-cikan" href="{{ h.url }}">
+        <div class="hizmet__gorsel">
+          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 800px) 50vw, 100vw" %}
+        </div>
+        <div class="hizmet__ic">
+          <span class="etiket">En çok tercih edilen</span>
+          <h3>{{ h.data.baslik }}</h3>
+          <p>{{ h.data.ozet }}</p>
+          <span class="hizmet__ok">
+            Detaylı bilgi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+        {%- endif %}
+      {%- endfor %}
+
+      {%- for h in collections.hizmetler %}
+        {%- if not h.data.oneCikan %}
+      <a class="hizmet" href="{{ h.url }}">
+        <div class="hizmet__gorsel">
+          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+        </div>
+        <div class="hizmet__ic">
+          <h3>{{ h.data.baslik }}</h3>
+          <p>{{ h.data.ozet }}</p>
+          <span class="hizmet__ok">
+            Detaylı bilgi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+        {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bolum bolum--koyu">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">Filomuz</span>
+      <h2>Bakımlı, giydirmeli ve tam donanımlı araçlar.</h2>
+      <p>
+        Filomuzdaki tüm araçlar yetkili serviste düzenli bakımdan geçer,
+        muayene ve sigortaları güncel tutulur.
+      </p>
+    </div>
+
+    <div class="izgara izgara--3">
+      {%- for a in filo.araclar %}
+      <article class="arac">
+        <div class="arac__gorsel">
+          {% resim a.gorsel, a.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+        </div>
+        <div class="arac__ic">
+          <h3>{{ a.ad }}</h3>
+          <dl class="arac__spec">
+            <div>
+              <dt>Kapasite</dt>
+              <dd>{{ a.kapasite }}</dd>
+            </div>
+            <div>
+              <dt>Tip</dt>
+              <dd>{{ a.tip }}</dd>
+            </div>
+            <div>
+              <dt>Donanım</dt>
+              <dd>{{ a.donanim }}</dd>
+            </div>
+            <div>
+              <dt>Kullanım</dt>
+              <dd>{{ a.kullanim }}</dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+
+    <div class="btn-grup" style="margin-top:2.5rem;">
+      <a class="btn" href="/filo/">Filonun tamamını görün</a>
+    </div>
+  </div>
+</section>
+
+<section class="bolum">
+  <div class="kap">
+    <div class="ikili">
+      <div>
+        <span class="etiket">Neden Koçer Tur</span>
+        <h2 style="font-size:var(--fs-2xl); margin-bottom:1.25rem;">
+          Servis işinde en önemli şey, aracın saat 06:00'da orada olmasıdır.
+        </h2>
+        <p style="color:var(--metin-soluk); font-size:var(--fs-lg); margin-bottom:1.5rem;">
+          Fabrika servisinde gecikme, vardiyanın tamamını etkiler. Bu yüzden işimizi
+          yedekli planlarız: her hat için alternatif araç ve şoför hazırda tutulur,
+          arıza veya yoğun trafik durumunda servis aksamaz.
+        </p>
+
+        <dl class="spec spec--acik">
+          <div class="spec__hucre">
+            <dt class="spec__ad">Yedek Araç</dt>
+            <dd class="spec__deger">Her hatta</dd>
+          </div>
+          <div class="spec__hucre">
+            <dt class="spec__ad">Şoför Belgeleri</dt>
+            <dd class="spec__deger">SRC + Psikoteknik</dd>
+          </div>
+          <div class="spec__hucre">
+            <dt class="spec__ad">Sigorta</dt>
+            <dd class="spec__deger">Zorunlu Koltuk</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="yuvarlak-gorsel">
+        {% resim "src/assets/img/filo/vw-crafter-fabrika-servisi.jpg", "Koçer Tur servis aracı sabah saatlerinde fabrika yolunda tırların yanında", "(min-width: 900px) 50vw, 100vw" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if collections.blog.length %}
+<section class="bolum bolum--alt">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">Blog</span>
+      <h2>Servis ve taşımacılık üzerine yazdıklarımız</h2>
+    </div>
+
+    <div>
+      {%- for y in collections.blog | limit(3) %}
+      <a class="yazi-kart" href="{{ y.url }}">
+        <time datetime="{{ y.date | isoTarih }}">{{ y.date | tarih }}</time>
+        <h3>{{ y.data.baslik }}</h3>
+        <p>{{ y.data.aciklama }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+
+    <div class="btn-grup" style="margin-top:2rem;">
+      <a class="btn btn--hayalet" style="color:var(--antrasit);" href="/blog/">Tüm yazılar</a>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="cta">
+  <div class="kap cta__ic">
+    <div class="cta__metin">
+      <h2>Servis ihtiyacınızı konuşalım.</h2>
+      <p>
+        Personel sayınızı, güzergâhınızı ve vardiya saatlerinizi iletin;
+        size uygun araç ve fiyatı aynı gün çıkaralım.
+      </p>
+    </div>
+    <div class="btn-grup">
+      <a class="btn btn--buyuk" href="/iletisim/#teklif">Teklif Formu</a>
+      <a class="btn btn--buyuk" href="https://wa.me/{{ site.telefon | waLink }}" target="_blank" rel="noopener">WhatsApp'tan Yazın</a>
+    </div>
+  </div>
+</section>

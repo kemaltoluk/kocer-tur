@@ -1,0 +1,199 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: tr
+
+media_folder: "src/assets/img/yuklenen"
+public_folder: "/assets/img/yuklenen"
+
+publish_mode: editorial_workflow
+
+collections:
+  # ---------------------------------------------------------------- Blog
+  - name: "blog"
+    label: "Blog Yazıları"
+    label_singular: "Blog Yazısı"
+    folder: "src/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    summary: "{{baslik}} — {{date | date('DD.MM.YYYY')}}"
+    sortable_fields: ["date", "baslik"]
+    fields:
+      - { name: "baslik", label: "Başlık", widget: "string" }
+      - {
+          name: "aciklama",
+          label: "Kısa açıklama (Google'da görünür)",
+          widget: "text",
+          hint: "150-160 karakter arası ideal. Arama sonuçlarında bu metin çıkar.",
+        }
+      - { name: "date", label: "Yayın tarihi", widget: "datetime", format: "YYYY-MM-DD" }
+      - {
+          name: "gorsel",
+          label: "Kapak görseli",
+          widget: "image",
+          required: false,
+          hint: "Yatay (16:9) görseller daha iyi durur.",
+        }
+      - {
+          name: "gorselAlt",
+          label: "Görsel açıklaması",
+          widget: "string",
+          required: false,
+          hint: "Görmeyen kullanıcılar ve Google için görselin ne olduğunu yazın.",
+        }
+      - { name: "body", label: "Yazı içeriği", widget: "markdown" }
+
+  # ----------------------------------------------------------- Hizmetler
+  - name: "hizmetler"
+    label: "Hizmetler"
+    label_singular: "Hizmet"
+    folder: "src/hizmetler"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    summary: "{{sira}}. {{baslik}}"
+    sortable_fields: ["sira", "baslik"]
+    fields:
+      - { name: "baslik", label: "Hizmet adı", widget: "string" }
+      - {
+          name: "seoBaslik",
+          label: "Google başlığı",
+          widget: "string",
+          required: false,
+          hint: "Boş bırakılırsa hizmet adı kullanılır. 60 karakteri geçmeyin.",
+        }
+      - { name: "ozet", label: "Kısa özet (kartlarda görünür)", widget: "text" }
+      - {
+          name: "aciklama",
+          label: "Google açıklaması",
+          widget: "text",
+          hint: "150-160 karakter arası ideal.",
+        }
+      - { name: "gorsel", label: "Görsel", widget: "image" }
+      - { name: "gorselAlt", label: "Görsel açıklaması", widget: "string" }
+      - {
+          name: "sira",
+          label: "Sıra numarası",
+          widget: "number",
+          value_type: "int",
+          hint: "Küçük sayı önce gelir.",
+        }
+      - {
+          name: "oneCikan",
+          label: "Ana sayfada büyük kart olarak göster",
+          widget: "boolean",
+          default: false,
+          required: false,
+        }
+      - name: "ozellikler"
+        label: "Öne çıkan özellikler"
+        widget: "list"
+        required: false
+        fields:
+          - { name: "baslik", label: "Başlık", widget: "string" }
+          - { name: "aciklama", label: "Açıklama", widget: "string" }
+      - { name: "body", label: "Sayfa içeriği", widget: "markdown" }
+
+  # ---------------------------------------------------------- Ayarlar
+  - name: "ayarlar"
+    label: "Site Ayarları"
+    files:
+      - name: "iletisim"
+        label: "Firma ve İletişim Bilgileri"
+        file: "src/_data/site.json"
+        fields:
+          - { name: "ad", label: "Firma adı", widget: "string" }
+          - { name: "unvan", label: "Resmi ünvan", widget: "string" }
+          - { name: "slogan", label: "Slogan", widget: "string" }
+          - { name: "ozet", label: "Firma özeti", widget: "text" }
+          - { name: "url", label: "Site adresi", widget: "string" }
+          - { name: "telefon", label: "Telefon", widget: "string" }
+          - { name: "yetkili", label: "Yetkili kişi", widget: "string" }
+          - { name: "eposta", label: "E-posta", widget: "string" }
+          - name: "adres"
+            label: "Adres"
+            widget: "object"
+            fields:
+              - { name: "sokak", label: "Açık adres", widget: "string" }
+              - { name: "ilce", label: "İlçe", widget: "string" }
+              - { name: "il", label: "İl", widget: "string" }
+              - { name: "postaKodu", label: "Posta kodu", widget: "string", required: false }
+              - { name: "ulke", label: "Ülke kodu", widget: "string", default: "TR" }
+              - {
+                  name: "haritaLinki",
+                  label: "Google Maps gömme bağlantısı",
+                  widget: "string",
+                  required: false,
+                  hint: "Google Maps > Paylaş > Harita yerleştir > src=... içindeki adres.",
+                }
+          - { name: "kurulusYili", label: "Kuruluş yılı", widget: "string", required: false }
+          - {
+              name: "aracSayisi",
+              label: "Araç sayısı",
+              widget: "number",
+              value_type: "int",
+            }
+          - { name: "aracSayisiNot", label: "(İç not)", widget: "string", required: false }
+          - { name: "calismaSaatleri", label: "Çalışma saatleri", widget: "string" }
+          - name: "sosyal"
+            label: "Sosyal medya"
+            widget: "object"
+            fields:
+              - { name: "instagram", label: "Instagram", widget: "string", required: false }
+              - { name: "facebook", label: "Facebook", widget: "string", required: false }
+              - { name: "youtube", label: "YouTube", widget: "string", required: false }
+          - {
+              name: "hizmetBolgeleri",
+              label: "Hizmet bölgeleri",
+              widget: "list",
+              field: { name: "bolge", label: "Bölge", widget: "string" },
+            }
+          - name: "guvenceler"
+            label: "Güvence maddeleri (ana sayfa şeridi)"
+            widget: "list"
+            fields:
+              - { name: "baslik", label: "Başlık", widget: "string" }
+              - { name: "aciklama", label: "Açıklama", widget: "string" }
+
+      - name: "filo"
+        label: "Araç Filosu"
+        file: "src/_data/filo.json"
+        fields:
+          - { name: "_uyari", label: "(İç not)", widget: "string", required: false }
+          - name: "araclar"
+            label: "Araçlar"
+            widget: "list"
+            summary: "{{fields.ad}} — {{fields.adet}} adet"
+            fields:
+              - { name: "ad", label: "Marka / Model", widget: "string" }
+              - { name: "tip", label: "Araç tipi", widget: "string" }
+              - { name: "gorsel", label: "Görsel yolu", widget: "string" }
+              - { name: "gorselAlt", label: "Görsel açıklaması", widget: "string" }
+              - { name: "kapasite", label: "Kapasite", widget: "string" }
+              - {
+                  name: "kapasiteDogrulandi",
+                  label: "Kapasite teyit edildi mi?",
+                  widget: "boolean",
+                  default: false,
+                  required: false,
+                }
+              - { name: "donanim", label: "Donanım", widget: "string" }
+              - { name: "kullanim", label: "Kullanım alanı", widget: "string" }
+              - { name: "adet", label: "Filodaki adet", widget: "number", value_type: "int" }
+              - {
+                  name: "adetDogrulandi",
+                  label: "Adet teyit edildi mi?",
+                  widget: "boolean",
+                  default: false,
+                  required: false,
+                }
+          - {
+              name: "plakalar",
+              label: "Plakalar (yayınlanmaz, iç kayıt)",
+              widget: "list",
+              field: { name: "plaka", label: "Plaka", widget: "string" },
+              required: false,
+            }
+          - { name: "_plakaNot", label: "(İç not)", widget: "string", required: false }

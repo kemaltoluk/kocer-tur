@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%- set sayfaBaslik = seoBaslik or baslik %}
+{%- set sayfaAciklama = aciklama or site.ozet %}
+{%- set kanonik = site.url + page.url %}
+
+{#- seoBaslik verildiyse o eksiksiz bir başlıktır, marka adı eklenmez. -#}
+<title>{% if seoBaslik %}{{ seoBaslik }}{% elif page.url == "/" %}{{ baslik }}{% else %}{{ baslik }} | {{ site.ad }}{% endif %}</title>
+<meta name="description" content="{{ sayfaAciklama }}">
+<link rel="canonical" href="{{ kanonik }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#14161b">
+<meta name="author" content="{{ site.ad }}">
+
+<meta property="og:type" content="{% if yazi %}article{% else %}website{% endif %}">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="{{ site.ad }}">
+<meta property="og:title" content="{{ sayfaBaslik }}">
+<meta property="og:description" content="{{ sayfaAciklama }}">
+<meta property="og:url" content="{{ kanonik }}">
+<meta property="og:image" content="{{ site.url }}/assets/img/marka/kocer-tur-tanitim.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/img/marka/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/marka/kocer-tur-logo-rozet.jpg">
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="alternate" type="application/atom+xml" href="/blog/feed.xml" title="{{ site.ad }} Blog">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site.url }}/#kurulus",
+  "name": "{{ site.ad }}",
+  "slogan": "{{ site.slogan }}",
+  "description": "{{ site.ozet }}",
+  "url": "{{ site.url }}",
+  "telephone": "{{ site.telefon | telLink }}",
+  "image": "{{ site.url }}/assets/img/marka/kocer-tur-logo-rozet.jpg",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ site.adres.ilce }}",
+    "addressRegion": "{{ site.adres.il }}",
+    "addressCountry": "{{ site.adres.ulke }}"
+  },
+  "areaServed": [{% for b in site.hizmetBolgeleri %}{"@type":"Place","name":"{{ b }}"}{% if not loop.last %},{% endif %}{% endfor %}],
+  "knowsLanguage": "tr"
+}
+</script>
+{%- if yazi %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ baslik }}",
+  "description": "{{ sayfaAciklama }}",
+  "datePublished": "{{ date | isoTarih }}",
+  "author": { "@type": "Organization", "name": "{{ site.ad }}" },
+  "publisher": { "@type": "Organization", "name": "{{ site.ad }}" },
+  "mainEntityOfPage": "{{ kanonik }}"
+}
+</script>
+{%- endif %}
+</head>
+<body>
+
+{% include "partials/header.njk" %}
+
+<main id="ana">
+  {{ content | safe }}
+</main>
+
+{% include "partials/footer.njk" %}
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

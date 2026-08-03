@@ -1,0 +1,95 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="hero" style="min-height:min(62svh, 560px);">
+  <div class="hero__gorsel">
+    {% resim gorsel, gorselAlt, "100vw", "", true %}
+  </div>
+
+  <div class="kap hero__ic">
+    <nav aria-label="Neredesiniz" style="margin-bottom:1rem; font-size:var(--fs-sm); color:var(--gri-400);">
+      <a href="/" style="color:inherit;">Ana Sayfa</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/hizmetler/" style="color:inherit;">Hizmetler</a>
+    </nav>
+
+    <h1 style="font-size:var(--fs-3xl);">{{ baslik }}</h1>
+    <p class="hero__ozet" style="margin-bottom:1.75rem;">{{ ozet }}</p>
+
+    <div class="btn-grup">
+      <a class="btn btn--buyuk" href="/iletisim/#teklif">Teklif Alın</a>
+      <a class="btn btn--buyuk btn--hayalet" href="tel:{{ site.telefon | telLink }}">{{ site.telefon }}</a>
+    </div>
+  </div>
+</section>
+
+{%- if ozellikler %}
+<section class="guven">
+  <div class="kap">
+    <ul class="guven__liste">
+      {%- for o in ozellikler %}
+      <li class="guven__oge">
+        <span class="guven__ikon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+        </span>
+        <div>
+          <strong>{{ o.baslik }}</strong>
+          <span>{{ o.aciklama }}</span>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+<section class="bolum">
+  <div class="kap kap--dar">
+    <div class="icerik">
+      {{ content | safe }}
+    </div>
+  </div>
+</section>
+
+<section class="bolum bolum--alt">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">Diğer hizmetlerimiz</span>
+      <h2>Başka bir konuda da yardımcı olabiliriz</h2>
+    </div>
+
+    <div class="izgara izgara--3">
+      {%- for h in collections.hizmetler %}
+      {%- if h.url != page.url %}
+      <a class="hizmet" href="{{ h.url }}">
+        <div class="hizmet__gorsel">
+          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+        </div>
+        <div class="hizmet__ic">
+          <h3>{{ h.data.baslik }}</h3>
+          <p>{{ h.data.ozet }}</p>
+          <span class="hizmet__ok">
+            Detaylı bilgi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="kap cta__ic">
+    <div class="cta__metin">
+      <h2>{{ baslik }} için teklif alın.</h2>
+      <p>İhtiyacınızı iletin, aynı gün dönüş yapalım.</p>
+    </div>
+    <div class="btn-grup">
+      <a class="btn btn--buyuk" href="/iletisim/#teklif">Teklif Formu</a>
+      <a class="btn btn--buyuk" href="https://wa.me/{{ site.telefon | waLink }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

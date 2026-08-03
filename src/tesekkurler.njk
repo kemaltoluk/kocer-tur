@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+permalink: /tesekkurler/
+baslik: Teşekkürler
+seoBaslik: "Teklif isteğiniz alındı | Koçer Tur"
+aciklama: "Teklif isteğiniz bize ulaştı. En kısa sürede dönüş yapacağız."
+---
+
+<section class="bolum" style="min-height:60svh; display:grid; place-items:center;">
+  <div class="kap kap--dar" style="text-align:center;">
+    <span class="guven__ikon" style="width:64px; height:64px; margin:0 auto 1.5rem; border-radius:16px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+    </span>
+
+    <h1 style="font-size:var(--fs-2xl); margin-bottom:1rem;">Teklif isteğiniz bize ulaştı.</h1>
+
+    <p style="font-size:var(--fs-lg); color:var(--metin-soluk); margin-bottom:2rem;">
+      En kısa sürede, mümkünse aynı gün içinde size dönüş yapacağız.
+      Acil bir durumsa doğrudan arayabilirsiniz.
+    </p>
+
+    <div class="btn-grup" style="justify-content:center;">
+      <a class="btn btn--buyuk" href="tel:{{ site.telefon | telLink }}">{{ site.telefon }}</a>
+      <a class="btn btn--buyuk btn--hayalet" style="color:var(--antrasit);" href="/">Ana Sayfaya Dön</a>
+    </div>
+  </div>
+</section>

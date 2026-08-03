@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+---
+
+<article>
+  <header class="bolum" style="padding-bottom:0;">
+    <div class="kap kap--dar">
+      <nav aria-label="Neredesiniz" style="margin-bottom:1.25rem; font-size:var(--fs-sm); color:var(--metin-soluk);">
+        <a href="/" style="color:inherit;">Ana Sayfa</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/blog/" style="color:inherit;">Blog</a>
+      </nav>
+
+      <time datetime="{{ date | isoTarih }}" style="display:block; font-size:var(--fs-xs); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--turuncu); margin-bottom:0.75rem;">
+        {{ date | tarih }}
+      </time>
+
+      <h1 style="font-size:var(--fs-2xl); margin-bottom:1rem;">{{ baslik }}</h1>
+
+      <p style="font-size:var(--fs-lg); color:var(--metin-soluk);">{{ aciklama }}</p>
+    </div>
+  </header>
+
+  {%- if gorsel %}
+  <div class="kap kap--dar" style="margin-top:2.5rem;">
+    <div class="yuvarlak-gorsel">
+      {% resim gorsel, gorselAlt or baslik, "(min-width: 800px) 760px, 100vw" %}
+    </div>
+  </div>
+  {%- endif %}
+
+  <div class="bolum" style="padding-top:2.5rem;">
+    <div class="kap kap--dar">
+      <div class="icerik">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+</article>
+
+<section class="cta">
+  <div class="kap cta__ic">
+    <div class="cta__metin">
+      <h2>Servis ihtiyacınız mı var?</h2>
+      <p>{{ site.adres.il }} ve çevresinde personel, okul ve grup taşımacılığı yapıyoruz.</p>
+    </div>
+    <div class="btn-grup">
+      <a class="btn btn--buyuk" href="/iletisim/#teklif">Teklif Alın</a>
+      <a class="btn btn--buyuk" href="tel:{{ site.telefon | telLink }}">{{ site.telefon }}</a>
+    </div>
+  </div>
+</section>

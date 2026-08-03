@@ -1,0 +1,48 @@
+{
+  "_uyari": "kapasite ve yil alanlari ARAC TIPINDEN TAHMIN EDILDI, dogrulanmadi. Yayina almadan once Agit Bey ile teyit edilecek. Plakalar fotograflardan okundu.",
+
+  "araclar": [
+    {
+      "ad": "Mercedes-Benz Sprinter",
+      "tip": "VIP / Uzun Şasi Minibüs",
+      "gorsel": "src/assets/img/filo/mercedes-sprinter-vip-gece.jpg",
+      "gorselAlt": "Koçer Tur filosundaki uzun şasi Mercedes-Benz Sprinter minibüs",
+      "kapasite": "16+1",
+      "kapasiteDogrulandi": false,
+      "donanim": "Klima, perde, USB şarj",
+      "kullanim": "Personel servisi, VIP transfer, düğün",
+      "adet": 4,
+      "adetDogrulandi": false
+    },
+    {
+      "ad": "Volkswagen Crafter",
+      "tip": "Uzun Şasi Minibüs",
+      "gorsel": "src/assets/img/filo/vw-crafter-2017-yan.jpg",
+      "gorselAlt": "Koçer Tur filosundaki Volkswagen Crafter personel servis aracı",
+      "kapasite": "16+1",
+      "kapasiteDogrulandi": false,
+      "donanim": "Klima, yüksek tavan, geniş bagaj",
+      "kullanim": "Fabrika personel servisi, okul servisi",
+      "adet": 5,
+      "adetDogrulandi": false
+    },
+    {
+      "ad": "Ford Transit",
+      "tip": "Yüksek Tavan Minibüs",
+      "gorsel": "src/assets/img/filo/ford-transit-on.jpg",
+      "gorselAlt": "Koçer Tur filosundaki Ford Transit minibüs",
+      "kapasite": "14+1",
+      "kapasiteDogrulandi": false,
+      "donanim": "Klima, yüksek tavan",
+      "kullanim": "Personel servisi, grup transferi",
+      "adet": 1,
+      "adetDogrulandi": false
+    }
+  ],
+
+  "plakalar": [
+    "01 BGL 055", "01 BGS 729", "01 BFT 389", "01 BGN 018", "01 APP 026",
+    "01 BDT 423", "01 ATK 357", "01 ANN 905", "01 BBF 576", "01 ABB 058"
+  ],
+  "_plakaNot": "Gonderilen fotograflardan okundu. '01 ABB 058' bulanik, teyit edilmeli. Sitede yayinlanmiyor, sadece ic kayit."
+}

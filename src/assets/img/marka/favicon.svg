@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="13" fill="#14161b"/>
+  <path d="M6 50C15 30 30 17 58 15" stroke="#f5821f" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <path d="M10 51C19 32 33 20 57 18" stroke="#14161b" stroke-width="2.6" stroke-linecap="round" fill="none" stroke-dasharray="5 6"/>
+  <text x="32" y="47" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">K</text>
+</svg>

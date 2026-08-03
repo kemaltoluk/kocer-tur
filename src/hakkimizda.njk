@@ -1,0 +1,117 @@
+---
+layout: layouts/base.njk
+permalink: /hakkimizda/
+baslik: Hakkımızda
+seoBaslik: "Hakkımızda | Koçer Tur — Adana Personel Servisi"
+aciklama: "Koçer Tur, Adana ve Ceyhan bölgesinde fabrika personel servisi, okul servisi ve grup taşımacılığı yapan bir aile işletmesidir."
+---
+
+<section class="bolum">
+  <div class="kap">
+    <div class="ikili">
+      <div>
+        <span class="etiket">Hakkımızda</span>
+        <h1 style="font-size:var(--fs-3xl); margin-bottom:1.25rem;">
+          {{ site.slogan }}
+        </h1>
+        <div class="icerik">
+          <p>
+            Koçer Tur, {{ site.adres.il }} ve çevresinde yolcu taşımacılığı yapan
+            bir işletmedir. İşimizin merkezinde fabrika personel servisi var;
+            bunun yanında okul servisi, düğün-nişan-sünnet gibi özel programlar ve
+            grup gezileri için de hizmet veriyoruz.
+          </p>
+          <p>
+            Bu işte kalıcı olmanın yolu, verdiğin sözü tutmaktan geçiyor.
+            Servis aracının sabah orada olacağını söylediysen, orada olacak.
+            Biz de işimizi bu basit ilke üzerine kurduk.
+          </p>
+        </div>
+      </div>
+
+      <div class="yuvarlak-gorsel">
+        {% resim "src/assets/img/filo/kocer-tur-filo-gun-batimi.jpg", "Koçer Tur filosu gün batımında sıralanmış halde", "(min-width: 900px) 50vw, 100vw" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bolum bolum--koyu">
+  <div class="kap">
+    <div class="bolum-basi merkez" style="text-align:center;">
+      <h2>Rakamlarla Koçer Tur</h2>
+    </div>
+
+    <dl class="spec">
+      <div class="spec__hucre">
+        <dt class="spec__ad">Filo</dt>
+        <dd class="spec__deger">{{ site.aracSayisi }} Araç</dd>
+      </div>
+      {%- if "DOLDURULACAK" not in site.kurulusYili %}
+      <div class="spec__hucre">
+        <dt class="spec__ad">Kuruluş</dt>
+        <dd class="spec__deger">{{ site.kurulusYili }}</dd>
+      </div>
+      {%- endif %}
+      <div class="spec__hucre">
+        <dt class="spec__ad">Hizmet Bölgesi</dt>
+        <dd class="spec__deger">{{ site.adres.il }} +</dd>
+      </div>
+      <div class="spec__hucre">
+        <dt class="spec__ad">Servis Düzeni</dt>
+        <dd class="spec__deger">7/24 Vardiya</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">Çalışma ilkelerimiz</span>
+      <h2>Dört başlıkta işimizi nasıl yaptığımız</h2>
+    </div>
+
+    <div class="izgara izgara--2">
+      <div class="icerik">
+        <h3>Zamanında olmak</h3>
+        <p>
+          Servis işinde dakiklik bir ayrıntı değil, işin kendisidir. Güzergâhları
+          gerçek trafik koşullarında test eder, planı buna göre yaparız.
+        </p>
+
+        <h3>Yedekli çalışmak</h3>
+        <p>
+          Her hat için alternatif araç ve şoför planımız hazırdır. Arıza veya
+          beklenmedik bir durum servisi durdurmaz.
+        </p>
+      </div>
+
+      <div class="icerik">
+        <h3>Şeffaf fiyat</h3>
+        <p>
+          Teklifte ne yazıyorsa o geçerlidir. Sonradan çıkan sürpriz kalemlerle
+          çalışmayız; güzergâh değişirse farkı önceden konuşuruz.
+        </p>
+
+        <h3>Ulaşılabilir olmak</h3>
+        <p>
+          Bir sorun olduğunda telefonun ucunda birini bulabilmelisiniz.
+          {{ site.yetkili }}'a doğrudan ulaşabilirsiniz.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="kap cta__ic">
+    <div class="cta__metin">
+      <h2>Tanışalım.</h2>
+      <p>Servis ihtiyacınızı dinleyelim, size uygun çözümü birlikte çıkaralım.</p>
+    </div>
+    <div class="btn-grup">
+      <a class="btn btn--buyuk" href="/iletisim/#teklif">İletişime Geçin</a>
+    </div>
+  </div>
+</section>

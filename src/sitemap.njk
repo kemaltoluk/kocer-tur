@@ -1,0 +1,17 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for sayfa in collections.all %}
+{%- if "/admin/" not in sayfa.url and "/tesekkurler/" not in sayfa.url %}
+  <url>
+    <loc>{{ site.url }}{{ sayfa.url }}</loc>
+    <lastmod>{{ sayfa.date | isoTarih }}</lastmod>
+    <changefreq>{% if sayfa.url == "/" %}weekly{% elif "/blog/" in sayfa.url %}monthly{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if sayfa.url == "/" %}1.0{% elif "/hizmetler/" in sayfa.url %}0.9{% else %}0.7{% endif %}</priority>
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>

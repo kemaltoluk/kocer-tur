@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+permalink: /blog/
+baslik: Blog
+seoBaslik: "Blog | Personel Servisi ve Taşımacılık Rehberi — Koçer Tur"
+aciklama: "Personel servisi, okul servisi ve grup taşımacılığı hakkında pratik bilgiler, fiyatlandırma rehberleri ve firma seçim kriterleri."
+---
+
+<section class="bolum">
+  <div class="kap kap--dar">
+    <div class="bolum-basi">
+      <span class="etiket">Blog</span>
+      <h1 style="font-size:var(--fs-3xl); margin-bottom:0.875rem;">Servis ve taşımacılık rehberi</h1>
+      <p>
+        Servis hizmeti alırken bilmeniz gerekenleri, sahadaki deneyimimize
+        dayanarak yazıyoruz.
+      </p>
+    </div>
+
+    {%- if collections.blog.length %}
+    <div>
+      {%- for y in collections.blog %}
+      <a class="yazi-kart" href="{{ y.url }}">
+        <time datetime="{{ y.date | isoTarih }}">{{ y.date | tarih }}</time>
+        <h3>{{ y.data.baslik }}</h3>
+        <p>{{ y.data.aciklama }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p style="color:var(--metin-soluk);">Yakında ilk yazılarımız burada olacak.</p>
+    {%- endif %}
+  </div>
+</section>

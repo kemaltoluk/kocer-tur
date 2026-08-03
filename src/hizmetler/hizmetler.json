@@ -1,0 +1,7 @@
+{
+  "layout": "layouts/hizmet.njk",
+  "tags": "hizmetler",
+  "eleventyComputed": {
+    "permalink": "/hizmetler/{{ page.fileSlug }}/"
+  }
+}

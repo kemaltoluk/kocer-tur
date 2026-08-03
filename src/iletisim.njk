@@ -1,0 +1,150 @@
+---
+layout: layouts/base.njk
+permalink: /iletisim/
+baslik: İletişim
+seoBaslik: "İletişim ve Teklif Formu | Koçer Tur — Adana"
+aciklama: "Koçer Tur ile iletişime geçin. Personel servisi, okul servisi ve grup taşımacılığı için teklif alın. Telefon: 0554 159 56 01"
+---
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">İletişim</span>
+      <h1 style="font-size:var(--fs-3xl); margin-bottom:0.875rem;">Konuşalım.</h1>
+      <p>
+        Servis ihtiyacınızı en hızlı telefonla çözeriz. Yazmayı tercih
+        ederseniz aşağıdaki formu doldurun, aynı gün dönüş yapalım.
+      </p>
+    </div>
+
+    <div class="ikili" style="align-items:start;">
+      <div>
+        <div class="icerik" style="font-size:var(--fs-base);">
+          <h2 style="margin-top:0;">Doğrudan ulaşın</h2>
+
+          <p style="margin-bottom:0.35rem;">
+            <strong style="display:block; font-size:var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color:var(--metin-soluk);">Telefon</strong>
+            <a href="tel:{{ site.telefon | telLink }}" style="font-size:var(--fs-2xl); font-weight:800; color:var(--antrasit); text-decoration:none; letter-spacing:-0.02em;">{{ site.telefon }}</a>
+          </p>
+
+          <p>
+            <strong style="display:block; font-size:var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color:var(--metin-soluk);">Yetkili</strong>
+            {{ site.yetkili }}
+          </p>
+
+          {%- if "DOLDURULACAK" not in site.eposta %}
+          <p>
+            <strong style="display:block; font-size:var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color:var(--metin-soluk);">E-posta</strong>
+            <a href="mailto:{{ site.eposta }}">{{ site.eposta }}</a>
+          </p>
+          {%- endif %}
+
+          <p>
+            <strong style="display:block; font-size:var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color:var(--metin-soluk);">Adres</strong>
+            {%- if "DOLDURULACAK" not in site.adres.sokak %}{{ site.adres.sokak }}<br>{% endif %}
+            {{ site.adres.ilce }} / {{ site.adres.il }}
+          </p>
+
+          <p>
+            <strong style="display:block; font-size:var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color:var(--metin-soluk);">Çalışma saatleri</strong>
+            {{ site.calismaSaatleri }}
+          </p>
+
+          <div class="btn-grup" style="margin-top:1.75rem;">
+            <a class="btn" href="https://wa.me/{{ site.telefon | waLink }}" target="_blank" rel="noopener">WhatsApp'tan Yazın</a>
+            <a class="btn btn--hayalet" style="color:var(--antrasit);" href="tel:{{ site.telefon | telLink }}">Hemen Arayın</a>
+          </div>
+
+          <h3>Hizmet bölgelerimiz</h3>
+          <p>{{ site.hizmetBolgeleri | join(" · ") }}</p>
+        </div>
+      </div>
+
+      <div id="teklif" style="scroll-margin-top:100px;">
+        <div style="background:var(--zemin-alt); border:1px solid var(--cizgi); border-radius:var(--yuvarlak); padding:clamp(1.5rem, 1rem + 2vw, 2.5rem);">
+          <h2 style="font-size:var(--fs-xl); margin-bottom:0.5rem;">Teklif formu</h2>
+          <p style="color:var(--metin-soluk); font-size:var(--fs-sm); margin-bottom:1.75rem;">
+            Ne kadar çok bilgi verirseniz, teklif o kadar net olur.
+          </p>
+
+          <form class="form" name="teklif" method="POST" data-netlify="true" netlify-honeypot="bot-alani" action="/tesekkurler/">
+            <input type="hidden" name="form-name" value="teklif">
+            <p style="display:none;">
+              <label>Bu alanı boş bırakın: <input name="bot-alani"></label>
+            </p>
+
+            <div class="form__satir form__satir--2">
+              <div class="alan">
+                <label for="ad">Ad Soyad <span aria-hidden="true">*</span></label>
+                <input type="text" id="ad" name="ad" required autocomplete="name">
+              </div>
+              <div class="alan">
+                <label for="telefon">Telefon <span aria-hidden="true">*</span></label>
+                <input type="tel" id="telefon" name="telefon" required autocomplete="tel" inputmode="tel" placeholder="05XX XXX XX XX">
+              </div>
+            </div>
+
+            <div class="form__satir form__satir--2">
+              <div class="alan">
+                <label for="kurum">Kurum / Firma</label>
+                <input type="text" id="kurum" name="kurum" autocomplete="organization">
+              </div>
+              <div class="alan">
+                <label for="hizmet">Hizmet türü <span aria-hidden="true">*</span></label>
+                <select id="hizmet" name="hizmet" required>
+                  <option value="">Seçiniz…</option>
+                  {%- for h in collections.hizmetler %}
+                  <option value="{{ h.data.baslik }}">{{ h.data.baslik }}</option>
+                  {%- endfor %}
+                  <option value="Diğer">Diğer</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form__satir form__satir--2">
+              <div class="alan">
+                <label for="kisi">Kişi sayısı</label>
+                <input type="number" id="kisi" name="kisi" min="1" inputmode="numeric">
+              </div>
+              <div class="alan">
+                <label for="tarih">Başlangıç / program tarihi</label>
+                <input type="date" id="tarih" name="tarih">
+              </div>
+            </div>
+
+            <div class="alan">
+              <label for="guzergah">Güzergâh</label>
+              <input type="text" id="guzergah" name="guzergah" placeholder="Nereden nereye? Örn: Ceyhan merkez → OSB">
+            </div>
+
+            <div class="alan">
+              <label for="mesaj">Detaylar</label>
+              <textarea id="mesaj" name="mesaj" placeholder="Vardiya saatleri, personelin oturduğu mahalleler, özel istekleriniz…"></textarea>
+              <small>Vardiya saatlerini ve mahalle bilgisini yazarsanız daha net fiyat verebiliriz.</small>
+            </div>
+
+            <button class="btn btn--buyuk" type="submit" style="width:100%;">Teklif İsteği Gönder</button>
+
+            <p style="font-size:var(--fs-xs); color:var(--metin-soluk); text-align:center;">
+              Bilgileriniz yalnızca teklif hazırlamak için kullanılır, üçüncü kişilerle paylaşılmaz.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if "DOLDURULACAK" not in site.adres.haritaLinki %}
+<section class="bolum bolum--alt" style="padding-top:0;">
+  <div class="kap">
+    <div style="border-radius:var(--yuvarlak); overflow:hidden; border:1px solid var(--cizgi);">
+      <iframe
+        src="{{ site.adres.haritaLinki }}"
+        width="100%" height="420" style="border:0; display:block;"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="{{ site.ad }} konum haritası"></iframe>
+    </div>
+  </div>
+</section>
+{%- endif %}
