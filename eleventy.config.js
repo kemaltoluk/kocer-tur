@@ -44,7 +44,7 @@ export default function (eleventyConfig) {
       language: "tr",
       title: "Koçer Tur Blog",
       subtitle: "Personel servisi, okul servisi ve grup taşımacılığı üzerine yazılar.",
-      base: "https://www.kocertur.com/",
+      base: (process.env.URL || process.env.DEPLOY_PRIME_URL || "http://localhost:8080").replace(/\/+$/, "") + "/",
       author: { name: "Koçer Tur" },
     },
   });

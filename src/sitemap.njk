@@ -1,4 +1,4 @@
----
+﻿---
 permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 {%- for sayfa in collections.all %}
 {%- if "/admin/" not in sayfa.url and "/tesekkurler/" not in sayfa.url %}
   <url>
-    <loc>{{ site.url }}{{ sayfa.url }}</loc>
+    <loc>{{ temelUrl }}{{ sayfa.url }}</loc>
     <lastmod>{{ sayfa.date | isoTarih }}</lastmod>
     <changefreq>{% if sayfa.url == "/" %}weekly{% elif "/blog/" in sayfa.url %}monthly{% else %}monthly{% endif %}</changefreq>
     <priority>{% if sayfa.url == "/" %}1.0{% elif "/hizmetler/" in sayfa.url %}0.9{% else %}0.7{% endif %}</priority>
