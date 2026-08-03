@@ -49,7 +49,7 @@
     "addressRegion": "{{ site.adres.il }}",
     "addressCountry": "{{ site.adres.ulke }}"
   },
-  "areaServed": [{% for b in site.hizmetBolgeleri %}{"@type":"Place","name":"{{ b }}"}{% if not loop.last %},{% endif %}{% endfor %}],
+  "areaServed": [{"@type":"Country","name":"Türkiye"}{% for b in site.hizmetBolgeleri %},{"@type":"Place","name":"{{ b }}"}{% endfor %}],
   "knowsLanguage": "tr"
 }
 </script>

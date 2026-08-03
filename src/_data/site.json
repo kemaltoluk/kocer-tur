@@ -2,7 +2,10 @@
   "ad": "Koçer Tur",
   "unvan": "DOLDURULACAK — resmi firma ünvanı (ör. Koçer Turizm Taşımacılık Ltd. Şti.)",
   "slogan": "Güvenli Yolculuğun Doğru Adresi.",
-  "ozet": "Adana ve çevresinde fabrika personel servisi, okul servisi, düğün-nişan-sünnet ve grup transfer hizmetleri.",
+  "ozet": "Merkezi Adana olmak üzere Türkiye genelinde fabrika personel servisi, okul servisi, düğün-nişan-sünnet ve grup transfer hizmetleri.",
+
+  "hizmetKapsami": "Türkiye geneli",
+  "merkez": "Adana",
 
   "url": "https://www.kocertur.com",
 
@@ -31,6 +34,7 @@
     "youtube": ""
   },
 
+  "_hizmetBolgeleriNot": "Turkiye geneli hizmet veriliyor; bunlar yogun calisilan odak bolgeler.",
   "hizmetBolgeleri": [
     "Adana",
     "Ceyhan",
