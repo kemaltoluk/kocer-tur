@@ -31,7 +31,11 @@ aciklama: "Koçer Tur araç filosu: Mercedes-Benz Sprinter, Volkswagen Crafter v
           <h3>{{ a.ad }}</h3>
           <dl class="arac__spec">
             <div><dt>Kapasite</dt><dd>{{ a.kapasite }}</dd></div>
+            {%- if a.adetDogrulandi %}
             <div><dt>Filodaki adet</dt><dd>{{ a.adet }}</dd></div>
+            {%- else %}
+            <div><dt>Kullanım</dt><dd>{{ a.kullanim }}</dd></div>
+            {%- endif %}
             <div><dt>Tip</dt><dd>{{ a.tip }}</dd></div>
             <div><dt>Donanım</dt><dd>{{ a.donanim }}</dd></div>
           </dl>
