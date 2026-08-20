@@ -90,7 +90,7 @@ aciklama: "Adana ve Ceyhan'da fabrika personel servisi, okul servisi, düğün-n
         {%- if h.data.oneCikan %}
       <a class="hizmet hizmet--one-cikan" href="{{ h.url }}">
         <div class="hizmet__gorsel">
-          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 800px) 50vw, 100vw" %}
+          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 800px) 50vw, 100vw", "", false, h.data.odak %}
         </div>
         <div class="hizmet__ic">
           <span class="etiket">En çok tercih edilen</span>
@@ -109,7 +109,7 @@ aciklama: "Adana ve Ceyhan'da fabrika personel servisi, okul servisi, düğün-n
         {%- if not h.data.oneCikan %}
       <a class="hizmet" href="{{ h.url }}">
         <div class="hizmet__gorsel">
-          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw", "", false, h.data.odak %}
         </div>
         <div class="hizmet__ic">
           <h3>{{ h.data.baslik }}</h3>
@@ -141,7 +141,7 @@ aciklama: "Adana ve Ceyhan'da fabrika personel servisi, okul servisi, düğün-n
       {%- for a in filo.araclar %}
       <article class="arac">
         <div class="arac__gorsel">
-          {% resim a.gorsel, a.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+          {% resim a.gorsel, a.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw", "", false, a.odak %}
         </div>
         <div class="arac__ic">
           <h3>{{ a.ad }}</h3>

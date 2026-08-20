@@ -5,6 +5,7 @@ ozet: "Davetlilerinizi salona ve salondan evlerine taşıyoruz. Özel günlerini
 aciklama: "Adana ve Ceyhan'da düğün, nişan, sünnet ve kına gecesi için davetli taşıma servisi. Temiz ve bakımlı araçlar, esnek saat planlaması."
 gorsel: src/assets/img/filo/mercedes-sprinter-vip-gece.jpg
 gorselAlt: Koçer Tur VIP Mercedes Sprinter aracı akşam saatlerinde özel program için hazır
+odak: "center 80%"
 sira: 3
 ozellikler:
   - baslik: Esnek Saat

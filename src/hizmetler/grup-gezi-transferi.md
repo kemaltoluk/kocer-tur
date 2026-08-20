@@ -5,6 +5,7 @@ ozet: "Şirket gezileri, okul gezileri, piknik ve tur organizasyonları için ş
 aciklama: "Adana çıkışlı grup gezi transferi ve şoförlü minibüs kiralama. Şirket etkinlikleri, okul gezileri, doğa turları ve şehirler arası grup taşımacılığı."
 gorsel: src/assets/img/filo/vw-crafter-sahil-kapi-acik.jpg
 gorselAlt: Koçer Tur aracı deniz kenarında grup gezisi için kapısı açık halde bekliyor
+odak: "center 50%"
 sira: 4
 ozellikler:
   - baslik: Şoförlü Kiralama

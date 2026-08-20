@@ -5,6 +5,7 @@ ozet: "Vardiya saatlerine göre planlanan, yedekli ve aksamayan fabrika personel
 aciklama: "Adana ve Ceyhan'da fabrika personel servisi. Vardiya bazlı güzergâh planlaması, yedek araç garantisi, SRC belgeli şoför kadrosu ve sigortalı yolculuk."
 gorsel: src/assets/img/filo/vw-crafter-fabrika-servisi.jpg
 gorselAlt: Koçer Tur personel servis aracı sabah vardiyası için fabrika yolunda
+odak: "center 52%"
 sira: 1
 oneCikan: true
 ozellikler:

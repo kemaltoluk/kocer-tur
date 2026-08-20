@@ -4,7 +4,7 @@ layout: layouts/base.njk
 
 <section class="hero" style="min-height:min(62svh, 560px);">
   <div class="hero__gorsel">
-    {% resim gorsel, gorselAlt, "100vw", "", true %}
+    {% resim gorsel, gorselAlt, "100vw", "", true, odak %}
   </div>
 
   <div class="kap hero__ic">
@@ -64,7 +64,7 @@ layout: layouts/base.njk
       {%- if h.url != page.url %}
       <a class="hizmet" href="{{ h.url }}">
         <div class="hizmet__gorsel">
-          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw", "", false, h.data.odak %}
         </div>
         <div class="hizmet__ic">
           <h3>{{ h.data.baslik }}</h3>

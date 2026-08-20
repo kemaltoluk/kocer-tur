@@ -5,6 +5,7 @@ ozet: "Okullara ve velilere yönelik, mevzuata uygun ve güvenlik odaklı öğre
 aciklama: "Adana ve Ceyhan'da okul servisi hizmeti. Okul Servis Araçları Yönetmeliği'ne uygun araçlar, deneyimli şoförler ve veli iletişimi."
 gorsel: src/assets/img/filo/ford-transit-on.jpg
 gorselAlt: Koçer Tur okul servisi olarak kullanılan Ford Transit minibüs
+odak: "center 72%"
 sira: 2
 ozellikler:
   - baslik: Mevzuata Uygun Araç

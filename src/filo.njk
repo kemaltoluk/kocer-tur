@@ -25,7 +25,7 @@ aciklama: "Koçer Tur araç filosu: Mercedes-Benz Sprinter, Volkswagen Crafter v
       {%- for a in filo.araclar %}
       <article class="arac">
         <div class="arac__gorsel">
-          {% resim a.gorsel, a.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+          {% resim a.gorsel, a.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw", "", false, a.odak %}
         </div>
         <div class="arac__ic">
           <h3>{{ a.ad }}</h3>

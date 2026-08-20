@@ -7,7 +7,14 @@ import path from "node:path";
  * Duyarlı görsel üretir: AVIF + WebP + JPEG, birden çok genişlikte.
  * Kullanım:  {% resim "src/assets/img/filo/x.jpg", "alt metni", "(min-width:900px) 50vw, 100vw" %}
  */
-async function resimShortcode(src, alt, sizes = "100vw", sinif = "", oncelik = false) {
+async function resimShortcode(
+  src,
+  alt,
+  sizes = "100vw",
+  sinif = "",
+  oncelik = false,
+  odak = ""
+) {
   if (alt === undefined) {
     throw new Error(`Görselde alt metni eksik: ${src}`);
   }
@@ -23,14 +30,20 @@ async function resimShortcode(src, alt, sizes = "100vw", sinif = "", oncelik = f
     },
   });
 
-  return Image.generateHTML(metadata, {
+  const nitelikler = {
     alt,
     sizes,
     class: sinif,
     loading: oncelik ? "eager" : "lazy",
     fetchpriority: oncelik ? "high" : "auto",
     decoding: "async",
-  });
+  };
+
+  // Dikey çekilmiş fotoğraflarda araç genelde alt yarıda kalıyor.
+  // "odak" ile kırpmanın hangi noktayı merkez alacağını belirliyoruz.
+  if (odak) nitelikler.style = `object-position:${odak}`;
+
+  return Image.generateHTML(metadata, nitelikler);
 }
 
 export default function (eleventyConfig) {

@@ -21,7 +21,7 @@ aciklama: "Koçer Tur hizmetleri: fabrika personel servisi, okul servisi, düğ�
       {%- for h in collections.hizmetler %}
       <a class="hizmet{% if h.data.oneCikan %} hizmet--one-cikan{% endif %}" href="{{ h.url }}">
         <div class="hizmet__gorsel">
-          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" %}
+          {% resim h.data.gorsel, h.data.gorselAlt, "(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw", "", false, h.data.odak %}
         </div>
         <div class="hizmet__ic">
           {%- if h.data.oneCikan %}<span class="etiket">En çok tercih edilen</span>{% endif %}
