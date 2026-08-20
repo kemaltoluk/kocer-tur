@@ -211,6 +211,28 @@ aciklama: "Adana ve Ceyhan'da fabrika personel servisi, okul servisi, düğün-n
   </div>
 </section>
 
+<section class="bolum bolum--koyu">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="etiket">Sahadan kareler</span>
+      <h2>İşimizi yaparken.</h2>
+      <p>
+        Sabahın köründe fabrika yolunda, kışın karlı dağ yolunda, gece
+        vardiyasında — araçlarımız yolda.
+      </p>
+    </div>
+
+    <div class="galeri">
+      {%- for k in galeri.kareler %}
+      <figure>
+        {% resim k.gorsel, k.alt, "(min-width: 900px) 33vw, (min-width: 540px) 50vw, 100vw" %}
+        {%- if k.yazi %}<figcaption>{{ k.yazi }}</figcaption>{% endif %}
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
 {%- if collections.blog.length %}
 <section class="bolum bolum--alt">
   <div class="kap">

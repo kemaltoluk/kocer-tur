@@ -1,0 +1,36 @@
+{
+  "_not": "Ana sayfadaki galeri. Kirpma yapilmaz - her fotograf kendi oraninda gosterilir, o yuzden 'odak' alanina gerek yok.",
+
+  "kareler": [
+    {
+      "gorsel": "src/assets/img/filo/mercedes-sprinter-uzun-yan.jpg",
+      "alt": "Koçer Tur uzun şasi Mercedes-Benz Sprinter minibüsü yandan görünümü",
+      "yazi": "Uzun şasi Sprinter — geniş iç hacim ve yüksek yolcu kapasitesi"
+    },
+    {
+      "gorsel": "src/assets/img/filo/kocer-tur-kis-dag-yolu.jpg",
+      "alt": "Koçer Tur servis aracı karla kaplı dağ yolunda ilerlerken",
+      "yazi": "Kış şartlarında dağ yolu — kar ve buzda da servis aksamıyor"
+    },
+    {
+      "gorsel": "src/assets/img/filo/kocer-tur-filo-genis-plan.jpg",
+      "alt": "Koçer Tur filosundaki beş minibüs gün doğumunda fabrika önünde sıralanmış",
+      "yazi": "Sabah vardiyası öncesi — araçlar yola çıkmaya hazır"
+    },
+    {
+      "gorsel": "src/assets/img/filo/mercedes-sprinter-alacakaranlik.jpg",
+      "alt": "Koçer Tur Mercedes Sprinter aracı alacakaranlıkta farları yanar halde",
+      "yazi": "Gece vardiyası — 7/24 servis düzeni"
+    },
+    {
+      "gorsel": "src/assets/img/filo/kocer-tur-filo-uc-arac.jpg",
+      "alt": "Koçer Tur filosundaki üç minibüs yan yana park halinde",
+      "yazi": "Filomuzun bir bölümü"
+    },
+    {
+      "gorsel": "src/assets/img/filo/mercedes-sprinter-sokak.jpg",
+      "alt": "Koçer Tur Mercedes Sprinter aracı şehir içinde yolcu almak üzere beklerken",
+      "yazi": "Şehir içi toplama — personel kapısının önünden alınıyor"
+    }
+  ]
+}
