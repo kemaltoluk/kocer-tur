@@ -6,6 +6,7 @@ aciklama: "Adana ve Ceyhan'da fabrika personel servisi. Vardiya bazlı güzergâ
 gorsel: src/assets/img/filo/vw-crafter-fabrika-servisi.jpg
 gorselAlt: Koçer Tur personel servis aracı sabah vardiyası için fabrika yolunda
 odak: "center 52%"
+odakHero: "center 47%"
 sira: 1
 oneCikan: true
 ozellikler:

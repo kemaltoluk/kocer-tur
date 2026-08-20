@@ -6,6 +6,7 @@ aciklama: "Adana ve Ceyhan'da okul servisi hizmeti. Okul Servis Araçları Yöne
 gorsel: src/assets/img/filo/ford-transit-on.jpg
 gorselAlt: Koçer Tur okul servisi olarak kullanılan Ford Transit minibüs
 odak: "center 72%"
+odakHero: "center 50%"
 sira: 2
 ozellikler:
   - baslik: Mevzuata Uygun Araç

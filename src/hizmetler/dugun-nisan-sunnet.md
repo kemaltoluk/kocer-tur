@@ -6,6 +6,7 @@ aciklama: "Adana ve Ceyhan'da düğün, nişan, sünnet ve kına gecesi için da
 gorsel: src/assets/img/filo/mercedes-sprinter-vip-gece.jpg
 gorselAlt: Koçer Tur VIP Mercedes Sprinter aracı akşam saatlerinde özel program için hazır
 odak: "center 80%"
+odakHero: "center 45%"
 sira: 3
 ozellikler:
   - baslik: Esnek Saat

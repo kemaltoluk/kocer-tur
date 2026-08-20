@@ -6,6 +6,7 @@ aciklama: "Adana çıkışlı grup gezi transferi ve şoförlü minibüs kiralam
 gorsel: src/assets/img/filo/vw-crafter-sahil-kapi-acik.jpg
 gorselAlt: Koçer Tur aracı deniz kenarında grup gezisi için kapısı açık halde bekliyor
 odak: "center 50%"
+odakHero: "center 40%"
 sira: 4
 ozellikler:
   - baslik: Şoförlü Kiralama

@@ -4,7 +4,8 @@ layout: layouts/base.njk
 
 <section class="hero" style="min-height:min(62svh, 560px);">
   <div class="hero__gorsel">
-    {% resim gorsel, gorselAlt, "100vw", "", true, odak %}
+    {# Hero çok geniş bir alan (~2.7:1); kartlardan farklı bir odak gerekiyor. #}
+    {% resim gorsel, gorselAlt, "100vw", "", true, odakHero or odak %}
   </div>
 
   <div class="kap hero__ic">

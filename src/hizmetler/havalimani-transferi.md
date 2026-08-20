@@ -6,6 +6,7 @@ aciklama: "Adana Havalimanı grup transfer hizmeti. Uçuş takipli karşılama, 
 gorsel: src/assets/img/filo/mercedes-sprinter-on.jpg
 gorselAlt: Koçer Tur Mercedes Sprinter aracı havalimanı transferi için şehir içinde
 odak: "center 78%"
+odakHero: "center 52%"
 sira: 5
 ozellikler:
   - baslik: Uçuş Saatine Göre
