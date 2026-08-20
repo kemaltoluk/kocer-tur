@@ -1,5 +1,9 @@
 {
-  "_uyari": "kapasite ve yil alanlari ARAC TIPINDEN TAHMIN EDILDI, dogrulanmadi. Yayina almadan once Agit Bey ile teyit edilecek. Plakalar fotograflardan okundu.",
+  "_uyari": "Kapasite araligi Kemal Bey tarafindan teyit edildi (19.08.2026): 16-20 kisi. Kapasite MARKAYA/MODELE BAGLI DEGIL - arac bazinda degisiyor. Model bazli adetler henuz bilinmiyor.",
+
+  "kapasiteAraligi": "16–20 kişi",
+  "kapasiteAciklama": "Kapasite markaya göre değil, araç bazında değişir. İhtiyaca göre ruhsata işlenmiş şekilde koltuk eklenebilir ya da daha ferah bir yolculuk için koltuk azaltılabilir.",
+
 
   "araclar": [
     {
@@ -8,8 +12,8 @@
       "gorsel": "src/assets/img/filo/mercedes-sprinter-uzun-yan.jpg",
       "gorselAlt": "Koçer Tur filosundaki uzun şasi Mercedes-Benz Sprinter minibüs yandan görünümü",
       "odak": "center 50%",
-      "kapasite": "16+1",
-      "kapasiteDogrulandi": false,
+      "kapasite": "16–20 kişi",
+      "kapasiteDogrulandi": true,
       "donanim": "Klima, perde, USB şarj",
       "kullanim": "Personel servisi, VIP transfer, düğün",
       "adet": 4,
@@ -21,8 +25,8 @@
       "gorsel": "src/assets/img/filo/vw-crafter-2017-arka.jpg",
       "gorselAlt": "Koçer Tur filosundaki Volkswagen Crafter personel servis aracı",
       "odak": "center 55%",
-      "kapasite": "16+1",
-      "kapasiteDogrulandi": false,
+      "kapasite": "16–20 kişi",
+      "kapasiteDogrulandi": true,
       "donanim": "Klima, yüksek tavan, geniş bagaj",
       "kullanim": "Fabrika personel servisi, okul servisi",
       "adet": 5,
@@ -34,8 +38,8 @@
       "gorsel": "src/assets/img/filo/ford-transit-arka.jpg",
       "gorselAlt": "Koçer Tur filosundaki Ford Transit minibüs arkadan görünümü",
       "odak": "center 66%",
-      "kapasite": "14+1",
-      "kapasiteDogrulandi": false,
+      "kapasite": "16–20 kişi",
+      "kapasiteDogrulandi": true,
       "donanim": "Klima, yüksek tavan",
       "kullanim": "Personel servisi, grup transferi",
       "adet": 1,
